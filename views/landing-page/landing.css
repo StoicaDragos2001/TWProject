@@ -26,7 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  background-image: url("Illustrationv2.svg");
+  background-image: url("../resources/Illustrationv2.svg");
   background-size: 130vh;
   background-repeat: no-repeat;
   background-position: 80% 70%;
