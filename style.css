@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background-color: #192233;
+}
+.content {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background-image: url("Illustrationv2.svg");
+  background-size: 130vh;
+  background-repeat: no-repeat;
+  background-position: 80% 70%;
+}
+.title,
+.subtitle,
+.buttons {
+  text-align: left;
+  margin-left: 10vh;
+}
+.title {
+  margin-top: 23vh;
+}
+h1 {
+  font-weight: 800;
+  font-size: 1.8em;
+  line-height: 80px;
+  color: #fff;
+}
+.subtitle {
+  margin-top: 3.5vh;
+}
+h4 {
+  font-weight: 500;
+  font-size: 0.7em;
+  line-height: 35px;
+  color: white;
+}
+.buttons {
+  margin-top: 2vh;
+}
+button {
+  padding: 15px 36px;
+  position: relative;
+  width: 185px;
+  height: 52px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  cursor: pointer;
+}
+#main-CTA {
+  background: linear-gradient(270deg, #db6ab5 0%, #6e3dc8 100%);
+  box-shadow: 0px 10px 20px rgba(219, 106, 181, 0.3);
+  border-radius: 37px;
+  border: none;
+}
+#second-CTA {
+  border: 1px solid #6781f7;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 10px 20px rgba(103, 129, 247, 0.3));
+  border-radius: 37px;
+  background-color: transparent;
+}
+nav {
+  position: fixed;
+  display: flex;
+  height: 10vh;
+  width: 100%;
+  background: #22304a;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 5px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 10.5px;
+  /* border-radius: 5px; */
+  letter-spacing: 0.2px;
+  line-height: 24px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover {
+  color: #db6ab5;
+  /* background: #fff; */
+}
+nav .menu-btn i {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"] {
+  display: none;
+}
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 40px 0 50px;
+  }
+  .title,
+  .subtitle,
+  .buttons {
+    margin-left: 5vh;
+  }
+  /* .title {
+    margin-top: 16vh;
+  } */
+}
+@media (max-width: 920px) {
+  .title,
+  .subtitle,
+  .buttons {
+    margin-left: 2vh;
+  }
+  .title {
+    margin-top: 22vh;
+  }
+  nav .menu-btn i {
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 10vh;
+    left: -100%;
+    background: #192233;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: #db6ab5;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content {
+    background-image: none;
+  }
+
+  h1 {
+    font-size: 1.4em;
+    line-height: 60px;
+  }
+
+  h4 {
+    font-size: 0.6em;
+    line-height: 30px;
+  }
+
+  .title {
+    margin-top: 14vh;
+  }
+
+  .subtitle {
+    margin-top: 1vh;
+  }
+
+  .buttons {
+    margin-top: 3vh;
+  }
+
+  .title,
+  .subtitle,
+  .buttons {
+    text-align: left;
+    margin-left: 1vh;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  #second-CTA {
+    margin-top: 2vh;
+  }
+}
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div {
+  font-size: 40px;
+  font-weight: 700;
+}
