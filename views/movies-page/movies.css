@@ -109,6 +109,7 @@ h2 {
 .filters {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .genre {
   padding: 5px 17px 5px 17px;
@@ -124,14 +125,16 @@ h2 {
   border-radius: 20px;
   cursor: pointer;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .active-genre {
   background: linear-gradient(270deg, #db6ab5 0%, #6e3dc8 100%);
   border: none;
+  padding: 6px 18px 6px 18px;
 }
 .cards {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
   column-count: 3;
   column-gap: 22px;
@@ -140,6 +143,7 @@ h2 {
 .movie-card {
   height: 413px;
   margin-bottom: 20px;
+  break-inside: avoid-column;
 }
 
 .movie-card-content {
@@ -169,7 +173,7 @@ h2 {
   background: linear-gradient(270deg, #db6ab5 0%, #6e3dc8 100%);
   border-radius: 15px;
   display: flex;
-  background-image: url(../resources/poster.jpg);
+  /* background-image: url(https://image.tmdb.org/t/p/original/wigZBAmNrIhxp2FNGOROUAeHvdh.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
