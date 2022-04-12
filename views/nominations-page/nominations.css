@@ -241,6 +241,7 @@ h2 {
   height: 92px;
   /* width: 33.33%; */
   margin-bottom: 24px;
+  break-inside: avoid-column;
 }
 
 .actor-card-content,
