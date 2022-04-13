@@ -89,7 +89,7 @@ function loadCards() {
   var overview_text =
     "The Last Jedi follows Rey as she seeks the aid of Luke Skywalker,in hopes of turning the tide for the Resistance in the fight against Kylo Ren and the First Order, whileGeneral Leia Organa, Finn, and Poe Dameron attempt to escape a First Order attack on the dwindling Resistance fleet.";
   console.log(overview_text);
-  for (let i = 0; i < 16; i++) {
+  for (let i = 0; i < 17; i++) {
     createMovieCard("Moonlight", "7.2", overview_text, url);
   }
 }
