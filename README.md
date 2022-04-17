@@ -1,6 +1,6 @@
 # TW Project -  AGA (Actors Guild Awards Visualizer)
 
-# authors:
+# Authors:
 
 * Dragos Stoica (2A5)
 
