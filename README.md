@@ -1,4 +1,10 @@
-# TWProject
+# TW Project -  AGA (Actors Guild Awards Visualizer)
+
+# authors:
+
+* Dragos Stoica (2A5)
+
+* Daniela Petrea (2A5)
 
 # UI/UX Design:
 
