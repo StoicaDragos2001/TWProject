@@ -83,7 +83,6 @@ nav ul li a {
 nav ul li a.active,
 nav ul li a:hover {
   color: #db6ab5;
-  /* background: #fff; */
 }
 
 nav .menu-btn i {
@@ -110,16 +109,12 @@ h2 {
 .cards {
   margin-top: 13px;
   width: 100%;
-  /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; */
   column-count: 3;
   column-gap: 20px;
 }
 .actor-card,
 .movie-card {
   height: 92px;
-  /* width: 33.33%; */
   margin-bottom: 24px;
   break-inside: avoid-column;
 }
@@ -142,8 +137,6 @@ h2 {
   background-color: #bbb;
   color: black;
   display: flex;
-  /* justify-content: space-between; */
-  /* justify-content: center; */
   background: linear-gradient(270deg, #db6ab5 0%, #6e3dc8 100%);
   border-radius: 15px;
 }
@@ -300,29 +293,6 @@ h2 {
     color: #db6ab5;
   }
 }
-@media screen and (max-width: 600px) {
-  /* .content {
-      background-image: none;
-    }
-  
-    h1 {
-      font-size: 1.4em;
-      line-height: 60px;
-    }
-  
-    h4 {
-      font-size: 0.6em;
-      line-height: 30px;
-    }
-  
-    button {
-      width: 100%;
-    }
-  
-    #second-CTA {
-      margin-top: 2vh;
-    } */
-}
 
 footer {
   bottom: 0;
@@ -465,7 +435,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #3f71ea;
+  color: #db6ab5;
 }
 
 @media (max-width: 880px) {
@@ -486,7 +456,4 @@ footer {
 .content div {
   font-size: 40px;
   font-weight: 700;
-}
-
-@media (max-width: 750px) {
 }

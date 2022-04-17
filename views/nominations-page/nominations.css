@@ -83,7 +83,6 @@ nav ul li a {
 nav ul li a.active,
 nav ul li a:hover {
   color: #db6ab5;
-  /* background: #fff; */
 }
 
 nav .menu-btn i {
@@ -165,7 +164,6 @@ h2 {
   line-height: 22px;
   letter-spacing: 0.2px;
   padding-left: 35px;
-  /* margin-bottom: 14px; */
   color: #ffffff;
   cursor: pointer;
   -webkit-user-select: none;
@@ -177,7 +175,6 @@ h2 {
   margin-right: 30px;
 }
 
-/* Hide the browser's default checkbox */
 .label-text input {
   position: absolute;
   opacity: 0;
@@ -186,7 +183,6 @@ h2 {
   width: 0;
 }
 
-/* Create a custom checkbox */
 .checkmark {
   position: absolute;
   top: 0;
@@ -197,24 +193,20 @@ h2 {
   border-radius: 5px;
 }
 
-/* When the checkbox is checked, add a blue background */
 .label-text input:checked ~ .checkmark {
   background-color: #fff;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
 .label-text input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* Style the checkmark/indicator */
 .label-text .checkmark:after {
   left: 9px;
   top: 5px;
@@ -230,16 +222,12 @@ h2 {
 .cards {
   margin-top: 13px;
   width: 100%;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; */
   column-count: 3;
   column-gap: 20px;
 }
 .actor-card,
 .movie-card {
   height: 92px;
-  /* width: 33.33%; */
   margin-bottom: 24px;
   break-inside: avoid-column;
 }
@@ -299,9 +287,9 @@ h2 {
   font-weight: 700;
   font-size: 20px;
   line-height: 22px;
-  /* text-align: left; */
   letter-spacing: 0.2px;
   color: #ffffff;
+  text-align: left;
 }
 
 #actor-movie-name {
@@ -464,29 +452,6 @@ h2 {
     color: #db6ab5;
   }
 }
-@media screen and (max-width: 600px) {
-  /* .content {
-    background-image: none;
-  }
-
-  h1 {
-    font-size: 1.4em;
-    line-height: 60px;
-  }
-
-  h4 {
-    font-size: 0.6em;
-    line-height: 30px;
-  }
-
-  button {
-    width: 100%;
-  }
-
-  #second-CTA {
-    margin-top: 2vh;
-  } */
-}
 
 footer {
   bottom: 0;
@@ -629,7 +594,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #3f71ea;
+  color: #db6ab5;
 }
 
 @media (max-width: 880px) {
