@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Upsilon</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="news.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body onload="loadCards();">
+    <nav>
+      <div>
+        <img src="../resources/Upsilon.svg" alt="Upsilon" />
+      </div>
+      <input type="checkbox" id="click" />
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">Actors</a></li>
+        <li><a href="#">Statistics</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="landing">
+      <div class="content">
+        <h2>News about Elon Musk:</h2>
+        <div id="cards" class="cards">
+          <!-- <div class="news-card">
+            <div class="news-card-content">
+              <div class="news-card-front">
+                <div class="article-image"></div>
+                <div class="card-text">
+                  <div class="card-text-content">
+                    <div id="name">
+                      Why Elon Musk’s about-face on Twitter board seat sets up
+                      ‘Game of Thrones’ battle
+                    </div>
+                    <div id="date">2022-04-09</div>
+                  </div>
+                </div>
+              </div>
+              <div class="news-card-back">
+                <div class="back-text">
+                  <div id="overview">
+                    Elon Musk’s decision to reject a seat on Twitter’s board of
+                    directors could set up a “Game of Thrones”-style battle over
+                    the social media platform’s future in the coming days,
+                    according to a prominent analyst...
+                  </div>
+                  <a id="back-source" href="https://newsapi.org/"
+                    >See full source</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="page-end">
+        <div class="pagination">
+          <a href="#">&laquo;</a>
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">&raquo;</a>
+        </div>
+      </div>
+      <footer class="footer-distributed">
+        <div class="footer-left">
+          <div class="logo">
+            <img src="../resources/Upsilon.svg" alt="Upsilon" />
+          </div>
+
+          <p class="footer-links">
+            <a href="#">Movies</a>
+            |
+            <a href="#">Actors</a>
+            |
+            <a href="#">Statistics</a>
+            |
+            <a href="#">Report</a>
+          </p>
+
+          <p class="footer-company-name">
+            Copyright &copy; 2022 <strong>Upsilon</strong> All rights reserved
+          </p>
+        </div>
+
+        <div class="footer-center">
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>Iasi</span> Romania</p>
+          </div>
+
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:stoicadragos2001@gmail.com">Dragos Stoica</a></p>
+          </div>
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:danapetrea.dp@gmail.com">Daniela Petrea</a></p>
+          </div>
+        </div>
+        <div class="footer-right">
+          <p class="footer-company-about">
+            <span>About us</span>
+            <strong>Upsilon</strong> is a team of two students from the Faculty
+            of Computer Science of the UAIC and this website is our Web
+            Technology project.
+          </p>
+          <div class="footer-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="news.js"></script>
+  </body>
+</html>
