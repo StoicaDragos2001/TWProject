@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
-  <body onload="loadCards();">
+  <body onload="initialization(),getInformation()">
     <nav>
       <div>
         <img src="../resources/Upsilon.svg" alt="Upsilon" />
@@ -25,10 +25,10 @@
         <i class="fas fa-bars"></i>
       </label>
       <ul>
-        <li><a href="#">Movies</a></li>
-        <li><a href="#">Actors</a></li>
-        <li><a href="#">Statistics</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="../movies-page/movies.html">Movies</a></li>
+        <li><a href="../actors-page/actors.html">Actors</a></li>
+        <li><a href="../statistics-page/statistics.html">Statistics</a></li>
+        <li><a href="../report-page/report.html">Report</a></li>
       </ul>
     </nav>
     <div class="landing">
@@ -41,6 +41,8 @@
                 >Nominee
                 <input
                   type="checkbox"
+                  name="filters"
+                  value="False"
                   id="nominalizat"
                   style="display: inline-block"
                   onclick=""
@@ -53,6 +55,8 @@
                 >Recipient
                 <input
                   type="checkbox"
+                  name="filters"
+                  value="True"
                   id="castigator"
                   style="display: inline-block"
                   onclick=""
@@ -64,13 +68,13 @@
           <div class="selector">
             <label id="year-select-label">
               <select id="year-select">
-                <option value="0">Year 2020</option>
-                <option value="1">Year 2019</option>
-                <option value="2">Year 2018</option>
-                <option value="3">Year 2017</option>
-                <option value="4">Year 2016</option>
-                <option value="5">Year 2015</option>
-                <option value="6">Year 2014</option>
+                <option value="2020">Year 2020</option>
+                <option value="2019">Year 2019</option>
+                <option value="2018">Year 2018</option>
+                <option value="2017">Year 2017</option>
+                <option value="2016">Year 2016</option>
+                <option value="2015">Year 2015</option>
+                <option value="2014">Year 2014</option>
               </select>
             </label>
           </div>
@@ -79,15 +83,17 @@
       </div>
       <div class="page-end">
         <div class="pagination">
-          <a href="#">&laquo;</a>
-          <a href="#" class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">6</a>
-          <a href="#">7</a>
-          <a href="#">&raquo;</a>
+          <div id="myButtons">
+            <a href="#" class="special" id="0">&laquo;</a>
+            <a href="#" class="btn active" id="1">1</a>
+            <a href="#" class="btn" id="2">2</a>
+            <a href="#" class="btn" id="3">3</a>
+            <a href="#" class="btn" id="4">4</a>
+            <a href="#" class="btn" id="5">5</a>
+            <a href="#" class="btn" id="6">6</a>
+            <a href="#" class="btn" id="7">7</a>
+            <a href="#" class="special" id="8">&raquo;</a>
+          </div>
         </div>
       </div>
       <footer class="footer-distributed">
@@ -97,13 +103,13 @@
           </div>
 
           <p class="footer-links">
-            <a href="#">Movies</a>
+            <a href="../movies-page/movies.html">Movies</a>
             |
-            <a href="#">Actors</a>
+            <a href="../actors-page/actors.html">Actors</a>
             |
-            <a href="#">Statistics</a>
+            <a href="../statistics-page/statistics.html">Statistics</a>
             |
-            <a href="#">Report</a>
+            <a href="../report-page/report.html">Report</a>
           </p>
 
           <p class="footer-company-name">
