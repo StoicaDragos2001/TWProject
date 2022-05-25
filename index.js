@@ -9,6 +9,10 @@ require("./tester/mongoose_tester.js");
 const { getInformation } = require("./controllers/nominations.controller.js");
 const { getInformationActors } = require("./controllers/actors.controller.js");
 const { getInformationNews } = require("./controllers/news.controller.js");
+const {
+  getInformationMovies,
+  getInformationMoviesGenre,
+} = require("./controllers/movies.controller.js");
 
 const server = http.createServer(async (req, res) => {
   var newurl = req.url;
@@ -38,6 +42,22 @@ const server = http.createServer(async (req, res) => {
       if (newurl[i] === "/") ok = 1;
     }
     getInformationNews(indexurl, res);
+  }
+
+  if (newurl.startsWith("/movies") && req.method === "GET") {
+    var indexurl = "",
+      ok = 0;
+    for (var i = 1; i < newurl.length; i++) {
+      if (ok == 1) indexurl += newurl[i];
+      if (newurl[i] === "/") ok = 1;
+    }
+
+    var count = 0;
+    for (var i = 0; i < newurl.length; i++) {
+      if (newurl.charAt(i) === "/") count++;
+    }
+    if (count == 2) getInformationMovies(indexurl, res);
+    else getInformationMoviesGenre(indexurl, res);
   }
 });
 
