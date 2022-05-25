@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
-  <body onload="loadCards();">
+  <body onload="initialization(), getInformationMovies();">
     <nav>
       <div>
         <img src="../resources/Upsilon.svg" alt="Upsilon" />
@@ -25,39 +25,42 @@
         <i class="fas fa-bars"></i>
       </label>
       <ul>
-        <li><a href="#">Movies</a></li>
-        <li><a href="#">Actors</a></li>
-        <li><a href="#">Statistics</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="../movies-page/movies.html">Movies</a></li>
+        <li><a href="../actors-page/actors.html">Actors</a></li>
+        <li><a href="../statistics-page/statistics.html">Statistics</a></li>
+        <li><a href="../report-page/report.html">Report</a></li>
       </ul>
     </nav>
     <div class="landing">
       <div class="content">
         <h2>Movies:</h2>
         <div id="filters" class="filters">
-          <div id="action" class="genre">Action</div>
-          <div id="adventure" class="genre">Adventure</div>
-          <div id="animation" class="genre">Animation</div>
-          <div id="comedy" class="genre">Comedy</div>
-          <div id="crime" class="genre">Crime</div>
-          <div id="romance" class="genre">Romance</div>
-          <div id="drama" class="genre">Drama</div>
-          <div id="fantasy" class="genre">Fantasy</div>
-          <div id="horror" class="genre">Horror</div>
+          <div id="0" class="genre active-genre">All</div>
+          <div id="28" class="genre">Action</div>
+          <div id="12" class="genre">Adventure</div>
+          <div id="16" class="genre">Animation</div>
+          <div id="35" class="genre">Comedy</div>
+          <div id="80" class="genre">Crime</div>
+          <div id="10749" class="genre">Romance</div>
+          <div id="18" class="genre">Drama</div>
+          <div id="14" class="genre">Fantasy</div>
+          <div id="27" class="genre">Horror</div>
         </div>
         <div id="cards" class="cards"></div>
       </div>
       <div class="page-end">
         <div class="pagination">
-          <a href="#">&laquo;</a>
-          <a href="#" class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">6</a>
-          <a href="#">7</a>
-          <a href="#">&raquo;</a>
+          <div id="myButtons">
+            <a href="#" class="special" id="0">&laquo;</a>
+            <a href="#" class="btn active" id="1">1</a>
+            <a href="#" class="btn" id="2">2</a>
+            <a href="#" class="btn" id="3">3</a>
+            <a href="#" class="btn" id="4">4</a>
+            <a href="#" class="btn" id="5">5</a>
+            <a href="#" class="btn" id="6">6</a>
+            <a href="#" class="btn" id="7">7</a>
+            <a href="#" class="special" id="8">&raquo;</a>
+          </div>
         </div>
       </div>
       <footer class="footer-distributed">
@@ -67,13 +70,13 @@
           </div>
 
           <p class="footer-links">
-            <a href="#">Movies</a>
+            <a href="../movies-page/movies.html">Movies</a>
             |
-            <a href="#">Actors</a>
+            <a href="../actors-page/actors.html">Actors</a>
             |
-            <a href="#">Statistics</a>
+            <a href="../statistics-page/statistics.html">Statistics</a>
             |
-            <a href="#">Report</a>
+            <a href="../report-page/report.html">Report</a>
           </p>
 
           <p class="footer-company-name">
