@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Upsilon</title>
+    <link rel="icon" href="../resources/favicon.ico" type="image/x-icon" />
     <meta charset="utf-8" />
     <link rel="stylesheet" href="statistics.css" />
     <link
@@ -17,64 +18,82 @@
     <!-- <script src="plotly.min.js"></script> -->
   </head>
 
-  <body>
+  <body
+    onload="getInformationStatistics(2020),eventPieChartCSVButton(),eventBarBlotCSVButton(),eventScatterPlotCSVButton();"
+  >
     <nav>
       <div>
-        <img src="../resources/Upsilon.svg" alt="Upsilon" />
+        <a href="../landing-page/landing.html">
+          <img src="../resources/Upsilon.svg" alt="Upsilon" />
+        </a>
       </div>
       <input type="checkbox" id="click" />
       <label for="click" class="menu-btn">
         <i class="fas fa-bars"></i>
       </label>
       <ul>
-        <li><a href="#">Movies</a></li>
-        <li><a href="#">Actors</a></li>
-        <li><a href="#">Statistics</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="../movies-page/movies.html">Movies</a></li>
+        <li><a href="../actors-page/actors.html">Actors</a></li>
+        <li><a href="../statistics-page/statistics.html">Statistics</a></li>
+        <li><a href="../report-page/report.html">Report</a></li>
       </ul>
     </nav>
     <div class="landing">
       <div class="content">
         <h2>Statistics:</h2>
         <div id="filters" class="filters">
-          <div id="2020" class="year">2020</div>
+          <div id="2020" class="year active-year">2020</div>
           <div id="2019" class="year">2019</div>
           <div id="2018" class="year">2018</div>
           <div id="2017" class="year">2017</div>
           <div id="2016" class="year">2016</div>
           <div id="2015" class="year">2015</div>
           <div id="2014" class="year">2014</div>
-          <div id="2013" class="year">2013</div>
-          <div id="2012" class="year">2012</div>
-          <div id="2011" class="year">2011</div>
-          <div id="2010" class="year">2010</div>
         </div>
         <div class="plots">
           <div class="stats">
-            <h3>Number of SAG Awards nominations in 2019</h3>
+            <h3>Number of SAG Awards nominations in 2020</h3>
             <div id="piechart"></div>
-            <div class="export-buttons">
-              <button type="button" id="CSV">Export CSV</button>
-              <button type="button" id="WebP">Export WebP</button>
-              <button type="button" id="SVG">Export SVG</button>
+            <div id="export-buttons-pie-chart" class="export-buttons">
+              <button type="button" class="button-pie-chart" id="CSV">
+                Export CSV
+              </button>
+              <button type="button" class="button-pie-chart" id="WebP">
+                Export WebP
+              </button>
+              <button type="button" class="button-pie-chart" id="SVG">
+                Export SVG
+              </button>
             </div>
           </div>
           <div class="stats">
-            <h3>Number of SAG Awards nominations and wins in 2019</h3>
+            <h3>Number of SAG Awards nominations and wins in 2020</h3>
             <div id="barplot"></div>
-            <div class="export-buttons">
-              <button type="button" id="CSV">Export CSV</button>
-              <button type="button" id="WebP">Export WebP</button>
-              <button type="button" id="SVG">Export SVG</button>
+            <div id="export-buttons-barplot" class="export-buttons">
+              <button type="button" class="button-barplot" id="CSV">
+                Export CSV
+              </button>
+              <button type="button" class="button-barplot" id="WebP">
+                Export WebP
+              </button>
+              <button type="button" class="button-barplot" id="SVG">
+                Export SVG
+              </button>
             </div>
           </div>
           <div class="stats">
-            <h3>Number of SAG Awards nominations and wins in 2019</h3>
+            <h3>Number of SAG Awards nominations and wins in 2020</h3>
             <div id="scatterplot"></div>
-            <div class="export-buttons">
-              <button type="button" id="CSV">Export CSV</button>
-              <button type="button" id="WebP">Export WebP</button>
-              <button type="button" id="SVG">Export SVG</button>
+            <div id="export-buttons-scatterplot" class="export-buttons">
+              <button type="button" class="button-scatterplot" id="CSV">
+                Export CSV
+              </button>
+              <button type="button" class="button-scatterplot" id="WebP">
+                Export WebP
+              </button>
+              <button type="button" class="button-scatterplot" id="SVG">
+                Export SVG
+              </button>
             </div>
           </div>
         </div>
@@ -86,13 +105,13 @@
           </div>
 
           <p class="footer-links">
-            <a href="#">Movies</a>
+            <a href="../movies-page/movies.html">Movies</a>
             |
-            <a href="#">Actors</a>
+            <a href="../actors-page/actors.html">Actors</a>
             |
-            <a href="#">Statistics</a>
+            <a href="../statistics-page/statistics.html">Statistics</a>
             |
-            <a href="#">Report</a>
+            <a href="../report-page/report.html">Report</a>
           </p>
 
           <p class="footer-company-name">
