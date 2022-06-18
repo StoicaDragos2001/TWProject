@@ -1,6 +1,3 @@
-var container = document.getElementById("filters");
-var filters = container.getElementsByClassName("genre");
-
 function statusMovie(response) {
   if (response.status === 200) {
     return Promise.resolve(response);
@@ -55,7 +52,6 @@ function initialization() {
 
 let data;
 async function getDataMovies() {
-  console.log("smth");
   let urlMoviesPage = `http://localhost:5000/movies/${index}`;
   await fetch(urlMoviesPage)
     .then(statusMovie)
@@ -192,15 +188,4 @@ function createMovieCard(name, rating, overview_text, poster_url) {
   overview.textContent = overview_text;
   back_text.appendChild(title);
   back_text.appendChild(overview);
-}
-
-function loadCards() {
-  var url =
-    "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3ba32041615387.57acc4bf0b15f.jpg";
-  var overview_text =
-    "The Last Jedi follows Rey as she seeks the aid of Luke Skywalker,in hopes of turning the tide for the Resistance in the fight against Kylo Ren and the First Order, whileGeneral Leia Organa, Finn, and Poe Dameron attempt to escape a First Order attack on the dwindling Resistance fleet.";
-  console.log(overview_text);
-  for (let i = 0; i < 17; i++) {
-    createMovieCard("Moonlight", "7.2", overview_text, url);
-  }
 }
