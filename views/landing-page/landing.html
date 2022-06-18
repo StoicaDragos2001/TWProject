@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Upsilon</title>
+    <link rel="icon" href="../resources/favicon.ico" type="image/x-icon" />
     <meta charset="utf-8" />
     <link rel="stylesheet" href="landing.css" />
     <link
@@ -18,17 +19,19 @@
   <body>
     <nav id="nav">
       <div>
-        <img src="../resources/Upsilon.svg" alt="Upsilon" />
+        <a href="../landing-page/landing.html">
+          <img src="../resources/Upsilon.svg" alt="Upsilon"
+        /></a>
       </div>
       <input type="checkbox" id="click" />
       <label for="click" class="menu-btn">
         <i class="fas fa-bars"></i>
       </label>
       <ul>
-        <li><a href="#">Movies</a></li>
-        <li><a href="#">Actors</a></li>
-        <li><a href="#">Statistics</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="../movies-page/movies.html">Movies</a></li>
+        <li><a href="../actors-page/actors.html">Actors</a></li>
+        <li><a href="../statistics-page/statistics.html">Statistics</a></li>
+        <li><a href="../report-page/report.html">Report</a></li>
       </ul>
     </nav>
     <div class="landing">
@@ -40,13 +43,25 @@
           <div class="subtitle">
             <h4>
               A Data Visualization Project examining Actors and Movie Data at
-              SAD Awards
+              SAG Awards
             </h4>
           </div>
         </div>
         <div class="buttons">
-          <button id="main-CTA">Nominations</button>
-          <button id="second-CTA">Statistics</button>
+          <button
+            onclick="document.location='../nominations-page/nominations.html'"
+            type="button"
+            id="main-CTA"
+          >
+            Nominations
+          </button>
+          <button
+            onclick="document.location='../statistics-page/statistics.html'"
+            type="button"
+            id="second-CTA"
+          >
+            Statistics
+          </button>
         </div>
       </div>
       <footer class="footer-distributed">
@@ -56,13 +71,13 @@
           </div>
 
           <p class="footer-links">
-            <a href="#">Movies</a>
+            <a href="../movies-page/movies.html">Movies</a>
             |
-            <a href="#">Actors</a>
+            <a href="../actors-page/actors.html">Actors</a>
             |
-            <a href="#">Statistics</a>
+            <a href="../statistics-page/statistics.html">Statistics</a>
             |
-            <a href="#">Report</a>
+            <a href="../report-page/report.html">Report</a>
           </p>
 
           <p class="footer-company-name">
