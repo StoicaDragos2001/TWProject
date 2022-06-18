@@ -10,9 +10,9 @@ function statusNomination(response) {
     return Promise.reject(new Error("An unexpected error occured"));
   }
 }
-var index = 1;
+let index = 1;
 function initialization() {
-  var btnContainer = document.getElementById("myButtons");
+  let btnContainer = document.getElementById("myButtons");
   var btns = btnContainer.getElementsByClassName("btn");
   for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
