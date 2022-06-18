@@ -1,4 +1,91 @@
-var cards_parent = document.getElementById("cards");
+let onlySecondName = "";
+function myFunction(k) {
+  let nameActor = data[3 * k];
+  let ok = 0;
+  for (let i = 1; i < nameActor.length; i++) {
+    if (ok == 1) onlySecondName += nameActor[i];
+    if (nameActor[i] === " ") ok = 1;
+  }
+  localStorage.setItem("variable", onlySecondName);
+  localStorage.setItem("actorName",nameActor);
+  location.href = `../news-page/news.html`;
+}
+function statusActor(response) {
+  if (response.status === 200) {
+    return Promise.resolve(response);
+  } else {
+    console.log(response);
+    return Promise.reject(new Error("An unexpected error occured"));
+  }
+}
+let index = 1;
+function initialization() {
+  let btnContainer = document.getElementById("myButtons");
+  let btns = btnContainer.getElementsByClassName("btn");
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function () {
+      let current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      index = this.id;
+      getInformationActors();
+      this.className += " active";
+    });
+  }
+  let btnsSpecial = btnContainer.getElementsByClassName("special");
+  for (let i = 0; i < 2; i++) {
+    btnsSpecial[i].addEventListener("click", function () {
+      if (this.id == 0) {
+        if (index != 1) {
+          let current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          index--;
+          let indexArrow = document.getElementById(`${index}`);
+          indexArrow.className += " active";
+          getInformationActors();
+        }
+      } else if (this.id == 8) {
+        if (index != 7) {
+          let current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          index++;
+          let indexArrow = document.getElementById(`${index}`);
+          indexArrow.className += " active";
+          getInformationActors();
+        }
+      }
+    });
+  }
+}
+
+let data;
+async function getDataActors() {
+  let urlActorsPage = `http://localhost:5000/actors/${index}`;
+  await fetch(urlActorsPage)
+    .then(statusActor)
+    .then((res) => res.json())
+    .then((response) => {
+      data = response;
+    });
+}
+async function getInformationActors() {
+  await getDataActors();
+  let oldCards = document.getElementsByClassName("actor-card");
+  for (let j = 0; j < oldCards.length; j++) {
+    oldCards[j].remove();
+    j--;
+  }
+  for (let i = 0; i < data.length; i = i + 3) {
+    createActorCard(data[i], data[i + 1], data[i + 2]);
+  }
+  let newCards = document.getElementsByClassName("actor-card");
+  for (let k = 0; k < newCards.length; k++) {
+    newCards[k].addEventListener("click", function () {
+      myFunction(k);
+    });
+  }
+}
+
+let cardsParent = document.getElementById("cards");
 {
   /* <div class="actor-card">
   <div class="actor-card-content">
@@ -12,43 +99,37 @@ var cards_parent = document.getElementById("cards");
   </div>
 </div>; */
 }
-function createActorCard(name, popularity, poster_url) {
-  var actor_card = document.createElement("div");
-  actor_card.classList.add("actor-card");
-  cards_parent.appendChild(actor_card);
+function createActorCard(name, popularity, posterUrl) {
+  let actorCard = document.createElement("div");
+  actorCard.classList.add("actor-card");
+  cardsParent.appendChild(actorCard);
 
-  var actor_card_content = document.createElement("div");
-  actor_card_content.classList.add("actor-card-content");
-  actor_card.appendChild(actor_card_content);
+  let actorCardContent = document.createElement("div");
+  actorCardContent.classList.add("actor-card-content");
+  actorCard.appendChild(actorCardContent);
 
-  var actor_card_front = document.createElement("div");
-  actor_card_front.classList.add("actor-card-front");
-  actor_card_content.appendChild(actor_card_front);
+  let actorCardFront = document.createElement("div");
+  actorCardFront.classList.add("actor-card-front");
+  actorCardContent.appendChild(actorCardFront);
 
-  var actor_image = document.createElement("div");
-  actor_image.classList.add("actor-image");
-  actor_card_front.appendChild(actor_image);
-  actor_image.style.backgroundImage = "url('" + poster_url + "')";
+  let actorImage = document.createElement("div");
+  actorImage.classList.add("actor-image");
+  actorCardFront.appendChild(actorImage);
+  let finalUrl = "https://image.tmdb.org/t/p/original/" + posterUrl;
+  actorImage.style.backgroundImage = "url('" + finalUrl + "')";
 
-  var card_text = document.createElement("div");
-  card_text.classList.add("card-text");
-  actor_card_front.appendChild(card_text);
+  let cardText = document.createElement("div");
+  cardText.classList.add("card-text");
+  actorCardFront.appendChild(cardText);
 
-  var actor_name = document.createElement("div");
-  actor_name.id = "actor-name";
-  actor_name.textContent = name;
+  let actorName = document.createElement("div");
+  actorName.id = "actor-name";
+  actorName.textContent = name;
 
-  var actor_popularity = document.createElement("div");
-  actor_popularity.id = "actor-popularity";
-  actor_popularity.textContent = popularity;
+  let actorPopularity = document.createElement("div");
+  actorPopularity.id = "actor-popularity";
+  actorPopularity.textContent = popularity;
 
-  card_text.appendChild(actor_name);
-  card_text.appendChild(actor_popularity);
-}
-
-function loadCards() {
-  var url = "https://image.tmdb.org/t/p/w500/kU3B75TyRiCgE270EyZnHjfivoq.jpg";
-  for (let i = 0; i < 23; i++) {
-    createActorCard("Brad Pitt", "POPULARITY: 10.673", url);
-  }
+  cardText.appendChild(actorName);
+  cardText.appendChild(actorPopularity);
 }
