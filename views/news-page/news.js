@@ -1,3 +1,84 @@
+var onlySecondName = localStorage.getItem("variable");
+var actorName = localStorage.getItem("actorName");
+function changeText() {
+  var containerTitle = document.getElementsByTagName("h2");
+  containerTitle[0].innerHTML = `News about ${actorName}:`;
+}
+function statusNews(response) {
+  if (response.status === 200) {
+    return Promise.resolve(response);
+  } else {
+    console.log(response);
+    return Promise.reject(new Error("An unexpected error occured"));
+  }
+}
+var index = 1;
+function initialization() {
+  var btnContainer = document.getElementById("myButtons");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function () {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      index = this.id;
+      getInformationNews();
+      this.className += " active";
+    });
+  }
+  var btnsSpecial = btnContainer.getElementsByClassName("special");
+  for (var i = 0; i < 2; i++) {
+    btnsSpecial[i].addEventListener("click", function () {
+      if (this.id == 0) {
+        if (index != 1) {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          index--;
+          var indexArrow = document.getElementById(`${index}`);
+          indexArrow.className += " active";
+          getInformationNews();
+        }
+      } else if (this.id == 8) {
+        if (index != 7) {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          index++;
+          var indexArrow = document.getElementById(`${index}`);
+          indexArrow.className += " active";
+          getInformationNews();
+        }
+      }
+    });
+  }
+}
+
+let data;
+async function getDataNews() {
+  let url_news_page = `http://localhost:5000/news/${onlySecondName}/${index}`;
+  await fetch(url_news_page)
+    .then(statusNews)
+    .then((res) => res.json())
+    .then((response) => {
+      data = response;
+    });
+}
+async function getInformationNews() {
+  await getDataNews();
+  var oldCards = document.getElementsByClassName("news-card");
+  for (let j = 0; j < oldCards.length; j++) {
+    oldCards[j].remove();
+    j--;
+  }
+  for (var i = 0; i < data.length; i = i + 5) {
+    var time = data[i + 1];
+    var ok = 0,
+      newTime = "";
+    for (var letter = 0; letter < time.length; letter++) {
+      if (time[letter] == "T") ok = 1;
+      if (ok == 0) newTime += time[letter];
+    }
+    createNewsCard(data[i], newTime, data[i + 2], data[i + 3], data[i + 4]);
+  }
+}
 {
   /* <div class="news-card">
             <div class="news-card-content">
@@ -29,10 +110,9 @@
             </div>
           </div> */
 }
-
 var cards_parent = document.getElementById("cards");
 
-function createMovieCard(name, date, overview_text, poster_url) {
+function createNewsCard(name, date, overview_text, poster_url, source_url) {
   var news_card = document.createElement("div");
   news_card.classList.add("news-card");
   cards_parent.appendChild(news_card);
@@ -80,30 +160,12 @@ function createMovieCard(name, date, overview_text, poster_url) {
   var overview = document.createElement("div");
   title.id = "back-source";
   title.classList.add("back-source");
-
+  title.addEventListener("click", function () {
+    window.open(source_url, "_blank").focus();
+  });
   title.textContent = "See full source";
   overview.id = "overview";
   overview.textContent = overview_text;
   back_text.appendChild(overview);
   back_text.appendChild(title);
-}
-
-function loadCards() {
-  var name =
-    "Why Elon Musk’s about-face on Twitter board seat sets up ‘Game of Thrones’ battle";
-  var url =
-    "https://s.yimg.com/os/creatr-uploaded-images/2021-07/b1850ed0-dfa4-11eb-bf7d-23e763248476";
-  var date = "2022-04-09";
-  var overview_text =
-    "Elon Musk’s decision to reject a seat on Twitter’s board of directors could set up a “Game of Thrones”-style battle over the social media platform’s future in the coming days, according to a prominent analyst...";
-  console.log(overview_text);
-  for (let i = 0; i < 17; i++) {
-    createMovieCard(name, date, overview_text, url);
-  }
-  var elements = document.getElementsByClassName("back-source");
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("click", () => {
-      window.location.href = "https://newsapi.org/";
-    });
-  }
 }

@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Upsilon</title>
+    <link rel="icon" href="../resources/favicon.ico" type="image/x-icon" />
     <meta charset="utf-8" />
     <link rel="stylesheet" href="news.css" />
     <link
@@ -14,25 +15,27 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <body onload="loadCards();">
+  <body onload="initialization(),getInformationNews(),changeText();">
     <nav>
       <div>
-        <img src="../resources/Upsilon.svg" alt="Upsilon" />
+        <a href="../landing-page/landing.html">
+          <img src="../resources/Upsilon.svg" alt="Upsilon" />
+        </a>
       </div>
       <input type="checkbox" id="click" />
       <label for="click" class="menu-btn">
         <i class="fas fa-bars"></i>
       </label>
       <ul>
-        <li><a href="#">Movies</a></li>
-        <li><a href="#">Actors</a></li>
-        <li><a href="#">Statistics</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="../movies-page/movies.html">Movies</a></li>
+        <li><a href="../actors-page/actors.html">Actors</a></li>
+        <li><a href="../statistics-page/statistics.html">Statistics</a></li>
+        <li><a href="../report-page/report.html">Report</a></li>
       </ul>
     </nav>
     <div class="landing">
       <div class="content">
-        <h2>News about Elon Musk:</h2>
+        <h2>News:</h2>
         <div id="cards" class="cards">
           <!-- <div class="news-card">
             <div class="news-card-content">
@@ -67,15 +70,17 @@
       </div>
       <div class="page-end">
         <div class="pagination">
-          <a href="#">&laquo;</a>
-          <a href="#" class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">6</a>
-          <a href="#">7</a>
-          <a href="#">&raquo;</a>
+          <div id="myButtons">
+            <a href="#" class="special" id="0">&laquo;</a>
+            <a href="#" class="btn active" id="1">1</a>
+            <a href="#" class="btn" id="2">2</a>
+            <a href="#" class="btn" id="3">3</a>
+            <a href="#" class="btn" id="4">4</a>
+            <a href="#" class="btn" id="5">5</a>
+            <a href="#" class="btn" id="6">6</a>
+            <a href="#" class="btn" id="7">7</a>
+            <a href="#" class="special" id="8">&raquo;</a>
+          </div>
         </div>
       </div>
       <footer class="footer-distributed">
@@ -85,13 +90,13 @@
           </div>
 
           <p class="footer-links">
-            <a href="#">Movies</a>
+            <a href="../movies-page/movies.html">Movies</a>
             |
-            <a href="#">Actors</a>
+            <a href="../actors-page/actors.html">Actors</a>
             |
-            <a href="#">Statistics</a>
+            <a href="../statistics-page/statistics.html">Statistics</a>
             |
-            <a href="#">Report</a>
+            <a href="../report-page/report.html">Report</a>
           </p>
 
           <p class="footer-company-name">
@@ -131,6 +136,6 @@
         </div>
       </footer>
     </div>
-    <script src="news.js"></script>
+    <script src="news.js" defer></script>
   </body>
 </html>
