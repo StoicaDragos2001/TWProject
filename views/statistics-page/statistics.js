@@ -34,12 +34,12 @@ function changeText() {
     if (index === 0) {
       containerH3[
         index
-      ].innerHTML = `Number of SAG Awards nominations in ${yearStatistics}`;
+      ].innerText = `Number of SAG Awards nominations in ${yearStatistics}`;
     }
     if (index === 1 || index === 2)
       containerH3[
         index
-      ].innerHTML = `Number of SAG Awards nominations and wins in ${yearStatistics}`;
+      ].innerText = `Number of SAG Awards nominations and wins in ${yearStatistics}`;
   }
 }
 
