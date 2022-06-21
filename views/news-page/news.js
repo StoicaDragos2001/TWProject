@@ -2,7 +2,7 @@ var onlySecondName = localStorage.getItem("variable");
 var actorName = localStorage.getItem("actorName");
 function changeText() {
   var containerTitle = document.getElementsByTagName("h2");
-  containerTitle[0].innerHTML = `News about ${actorName}:`;
+  containerTitle[0].innerText = `News about ${actorName}:`;
 }
 function statusNews(response) {
   if (response.status === 200) {
