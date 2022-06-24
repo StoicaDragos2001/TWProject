@@ -148,6 +148,21 @@
           </li>
         </ul>
       </li>
+      <li>
+        <a href="#bonus"> Bonus </a>
+        <ul role="directory">
+          <li>
+            7.1
+            <a href="Score"> Score </a>
+          </li>
+        </ul>
+        <ul role="directory">
+          <li>
+            7.2
+            <a href="Security"> Security</a>
+          </li>
+        </ul>
+      </li>
 
       <li>
         <a href="#tasks"> Task assignment </a>
@@ -174,7 +189,7 @@
     </div>
 
     <section id="abstract">
-      <h2><span>1. </span>Abstract</h2>
+      <h2><span>1. </span>Abstract 📎</h2>
       <p>
         Create a Web tool for flexible visualization of data on actor
         nominations for the last years at the Screen Actors Guild (SAG) Awards
@@ -188,7 +203,7 @@
     </section>
 
     <section id="introduction">
-      <h2><span>2. </span>Introduction</h2>
+      <h2><span>2. </span>Introduction 🗒</h2>
       <section id="purpose">
         <h3><span>2.1 </span>Purpose</h3>
         <p>
@@ -276,7 +291,7 @@
     </section>
 
     <section id="description">
-      <h2><span>3. </span>Overall Description</h2>
+      <h2><span>3. </span>Overall Description 👓</h2>
       <section id="product">
         <h3><span>3.1 </span>Product Description</h3>
         <p>
@@ -318,7 +333,7 @@
       </section>
     </section>
     <section id="requirements">
-      <h2><span>4. </span>External Interface Requirements</h2>
+      <h2><span>4. </span>External Interface Requirements ✅</h2>
       <section id="user">
         <h3><span>4.1 </span>User Interfaces</h3>
         <p>
@@ -356,7 +371,7 @@
       </section>
 
       <section id="communications">
-        <h3><span>4.4 </span>communications Interfaces</h3>
+        <h3><span>4.4 </span>Communications Interfaces</h3>
         <p>
           Actors Guild Awards Visualizer requires Internet connection. The
           communication standard we want to use is HTTP.
@@ -364,7 +379,7 @@
       </section>
     </section>
     <section id="pages">
-      <h2><span>5. </span>Structure of the app</h2>
+      <h2><span>5. </span>Structure of the app 📲</h2>
       <section id="landing-page">
         <h3><span>5.1 </span>Landing page</h3>
         <p>
@@ -437,7 +452,7 @@
       </section>
     </section>
     <section id="extra-components">
-      <h2><span>6.</span>Extra Components</h2>
+      <h2><span>6.</span>Extra Components 🌍</h2>
       <iframe
         style="border: 1px solid rgba(0, 0, 0, 0.1)"
         width="800"
@@ -473,9 +488,101 @@
         </section>
       </section>
     </section>
+    <section id="bonus">
+      <h2><span>7. </span>Bonus 👨‍💻👩‍💻</h2>
+      <section id="score">
+        <h4><span>7.1 </span>Score</h4>
+        <p>
+          For each page we calculated a score via
+          <a href="https://web.dev/measure/">https://web.dev/measure/</a>.
+        </p>
+        <p>-Landing page: average of 94:</p>
+        <img
+          src="../resources/landing.png"
+          alt="landing"
+          width="600"
+          height="300"
+        />
+        <p>-Nominations page: average of 91:</p>
+        <img
+          src="../resources/nominations.png"
+          alt="nominations"
+          width="600"
+          height="300"
+        />
+        <p>-Movies page: average of 90:</p>
+        <img
+          src="../resources/movies.png"
+          alt="movies"
+          width="600"
+          height="300"
+        />
+        <p>-Actors page: average of 91:</p>
+        <img
+          src="../resources/actors.png"
+          alt="actors"
+          width="600"
+          height="300"
+        />
+        <p>-News page: average of 90:</p>
+        <img src="../resources/news.png" alt="news" width="600" height="300" />
+        <p>-Statistics page: average of 91:</p>
+        <img
+          src="../resources/statistics.png"
+          alt="statistics"
+          width="600"
+          height="300"
+        />
+        <h4>Overall score: 91.45</h4>
+      </section>
+      <section id="security">
+        <h4><span>7.2 </span>Security</h4>
+        <p>
+          -Our site is protected by sql injection, as it does not allow the
+          alteration or deletion of data from databases using urls. In the case
+          of both the nomination page and the statistics page, the filtering
+          takes place on the front, and the user can select the filtering
+          criterion by pressing a button and therefore cannot modify the url
+          according to his own choice.
+        </p>
+        <p>
+          -We also took measures to ensure protection against cross site
+          scripting attacks. All instances of innerHTML have been modified to
+          innerText to avoid rendering malicious scripts. Most of the website
+          interaction is based on predefined filters, this way we avoided
+          information completed by the user that could be rendered in the form
+          of innerHTML.
+        </p>
+        <p>
+          -Additionally, we used Zed Attack Proxy in order to find and scan
+          potential vulnerabilities. The following were tested by ZAP security
+          software:
+        </p>
+        <ul>
+          <li>SQL injection</li>
+          <li>Cross-site scripting (XSS)</li>
+          <li>Broken access control</li>
+          <li>Security miss-configuration</li>
+          <li>Broken authentication</li>
+          <li>Sensitive data exposure</li>
+          <li>Cross-site request forgery (CSRF)</li>
+          <li>Using components with known vulnerabilities.</li>
+        </ul>
+        <p>
+          We following feedback was generated, containing only minor warning (no
+          red flags 🚩 ):
+        </p>
+        <img
+          src="../resources/security.png"
+          alt="security"
+          width="600"
+          height="300"
+        />
+      </section>
+    </section>
 
     <section id="tasks">
-      <h2><span>7. </span>Task assignment</h2>
+      <h2><span>8. </span>Task assignment 🏅</h2>
       <p>
         Tasks have been assigned so that all team members work equally hard.
         Initially we set the design, the color palette and what the interface
@@ -484,7 +591,7 @@
         commits given the division of the application into many submodules and
         tasks.
       </p>
-      <h4>Petrea Daniela:</h4>
+      <h4>👩‍💻 Petrea Daniela:</h4>
       <ul>
         <li>
           Design
@@ -506,10 +613,18 @@
           Back-End
           <ul>
             <li>Nominations page</li>
+            <li>Statistics page</li>
+          </ul>
+        </li>
+        <li>
+          Bonus
+          <ul>
+            <li>Score</li>
+            <li>Security for SQL injection</li>
           </ul>
         </li>
       </ul>
-      <h4>Stoica Dragos:</h4>
+      <h4>👨‍💻 Stoica Dragos:</h4>
       <ul>
         <li>
           Design
@@ -533,6 +648,13 @@
           <ul>
             <li>Actors page</li>
             <li>News page</li>
+            <li>Movies page</li>
+          </ul>
+        </li>
+        <li>
+          Bonus
+          <ul>
+            <li>Security for cross site scripting</li>
           </ul>
         </li>
       </ul>
